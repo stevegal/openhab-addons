@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="mqtt"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="camera">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="broker"/>
+		</supported-bridge-type-refs>
+		<label>mqtt.ring doorbell</label>
+		<description>You need a configured broker first. This Thing represents a ring device from the mqtt homeassistant
+			bridge</description>
+		<channels>
+			<channel typeId="level" id="batteryLevel"></channel>
+		</channels>
+		<config-description-ref uri="thing-type:mqtt:ringdoorbell"/>
+	</thing-type>
+	
+	<thing-type id="chime">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="broker"/>
+		</supported-bridge-type-refs>
+		<label>mqtt.ring chime</label>
+		<description>You need a configured broker first. This Thing represents a ring device from the mqtt homeassistant
+			bridge</description>
+		<channels>
+			<channel typeId="level" id="batteryLevel"></channel>
+		</channels>
+		<config-description-ref uri="thing-type:mqtt:chime"/>
+	</thing-type>
+
+	<channel-type id="level">
+		<item-type>String</item-type>
+		<label>Text Value</label>
+		<config-description-ref uri="thing-type:mqtt:string_channel"/>
+	</channel-type>
+
+
+</thing:thing-descriptions>
