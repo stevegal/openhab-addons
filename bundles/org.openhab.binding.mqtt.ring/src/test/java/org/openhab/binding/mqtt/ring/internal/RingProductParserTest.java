@@ -18,4 +18,16 @@ public class RingProductParserTest {
         assertThat(ringTopic.getFunction()).isEqualTo("snapshot");
         assertThat(ringTopic.getFunctionState()).isEqualTo("image");
     }
+
+    @Test
+    void topicsWithoutFunctionState() {
+        RingTopicParser parser = new RingTopicParser();
+
+        RingTopic ringTopic = parser.parseTopic("ring/mqtt-id/camera/ring-id/info");
+
+        assertThat(ringTopic.getRingProduct()).isEqualTo(RingProduct.CAMERA);
+        assertThat(ringTopic.getBaseTopic()).isEqualTo("ring/mqtt-id");
+        assertThat(ringTopic.getRingId()).isEqualTo("ring-id");
+        assertThat(ringTopic.getFunction()).isEqualTo("info");
+    }
 }

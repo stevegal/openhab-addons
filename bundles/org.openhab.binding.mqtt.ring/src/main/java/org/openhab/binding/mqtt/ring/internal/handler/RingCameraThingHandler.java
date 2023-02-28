@@ -10,9 +10,9 @@ import org.openhab.core.io.transport.mqtt.MqttBrokerConnection;
 import org.openhab.core.thing.ChannelUID;
 import org.openhab.core.thing.Thing;
 
-public class RingThingHandler extends AbstractMQTTThingHandler {
+public class RingCameraThingHandler extends AbstractMQTTThingHandler {
 
-    public RingThingHandler(Thing thing, int subscribeTimeout) {
+    public RingCameraThingHandler(Thing thing, int subscribeTimeout) {
         super(thing, subscribeTimeout);
         // TODO Auto-generated constructor stub
     }

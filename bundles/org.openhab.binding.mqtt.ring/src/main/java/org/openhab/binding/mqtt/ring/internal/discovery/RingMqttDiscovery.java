@@ -76,6 +76,7 @@ public class RingMqttDiscovery extends AbstractMQTTDiscovery {
                         .create(new ThingUID(getThingTypeUID(ringTopic.getRingProduct()), bridge,
                                 ringTopic.getRingId()))
                         .withProperty(RingBindingConstants.PRESENTATION_PROPERTY_KEY, label)
+                        .withProperty(RingBindingConstants.PRODUCT_PROPERTY_KEY, ringTopic.getRingProduct().name())
                         .withRepresentationProperty("name").withBridge(bridge))
                 .withLabel(label);
         inProgDiscoveryResultBuilder.withProperty(ringTopic.getFunction() + "_" + ringTopic.getFunctionState(),
@@ -108,7 +109,7 @@ public class RingMqttDiscovery extends AbstractMQTTDiscovery {
     private ThingTypeUID getThingTypeUID(RingProduct product) {
         ThingTypeUID thingTypeUID = RingBindingConstants.SUPPORTED_THINGS.get(product);
         if (null == thingTypeUID) {
-            thingTypeUID = RingBindingConstants.UNKNOWN_THING_TYPE_UID;
+            thingTypeUID = RingBindingConstants.UNKNOWN_THING_TYPE;
         }
         return thingTypeUID;
     }

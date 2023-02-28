@@ -30,13 +30,16 @@ public class RingBindingConstants {
 
     public static final String PRESENTATION_PROPERTY_KEY = "name";
 
+    public static final String PRODUCT_PROPERTY_KEY = "ringProduct";
+
     // List of all Thing Type UIDs
     public static final ThingTypeUID CAMERA_THING_TYPE = new ThingTypeUID(BINDING_ID, "camera");
     public static final ThingTypeUID CHIME_THING_TYPE = new ThingTypeUID(BINDING_ID, "chime");
+    public static final ThingTypeUID UNKNOWN_THING_TYPE = new ThingTypeUID(BINDING_ID, "unknown");
 
     // convenience set of supported devices
     public static final Map<RingProduct, ThingTypeUID> SUPPORTED_THINGS = Map.of(RingProduct.CAMERA, CAMERA_THING_TYPE,
-            RingProduct.CHIME, CHIME_THING_TYPE);
+            RingProduct.CHIME, CHIME_THING_TYPE, RingProduct.UNKNOWN, UNKNOWN_THING_TYPE);
 
     // List of all Channel ids
     public static final String CHANNEL_1 = "channel1";

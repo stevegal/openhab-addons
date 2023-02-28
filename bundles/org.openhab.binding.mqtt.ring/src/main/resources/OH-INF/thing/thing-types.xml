@@ -16,7 +16,7 @@
 		</channels>
 		<config-description-ref uri="thing-type:mqtt:ringdoorbell"/>
 	</thing-type>
-	
+
 	<thing-type id="chime">
 		<supported-bridge-type-refs>
 			<bridge-type-ref id="broker"/>
